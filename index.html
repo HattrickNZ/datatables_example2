@@ -1,0 +1,66 @@
+<!doctype html>
+
+<!-- 
+trying to recreate this
+https://datatables.net/beta/1.8/examples/ajax/deep.html 
+-->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+<h1>The HTML5 Herald</h1>
+<p>want to combine this https://datatables.net/examples/api/regex.html
+ with this https://datatables.net/examples/data_sources/ajax.html - so basically ajax with regex, although not sure how this work if the ajax was to a database and not a file like it is here </p>
+<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+<script>
+
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "ajax": 'ajax/data/arrays.txt'
+    } );
+} );
+
+</script>
+
+  <!-- <script src="js/scripts.js"></script> --> 
+</body>
+</html>
