@@ -17,6 +17,12 @@ https://datatables.net/beta/1.8/examples/ajax/deep.html
   <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
   <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   
+	<style>
+		tfoot {
+			display: table-header-group;
+		}
+	</style>
+  
   <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
 
   <!--[if lt IE 9]>
@@ -30,7 +36,7 @@ https://datatables.net/beta/1.8/examples/ajax/deep.html
 <ol>
 	<li>want to combine this https://datatables.net/examples/api/regex.html
  with this https://datatables.net/examples/data_sources/ajax.html - so basically ajax with regex, although not sure how this work if the ajax was to a database and not a file like it is here -- DONE </li>
-	<li> Want to contro where the column searches are located preferably on the top </li>
+	<li> Want to contro where the column searches are located preferably on the top  e.g. https://datatables.net/examples/api/multi_filter.html</li>
 	<li> option 3 </li>
 </ol>
 
@@ -141,6 +147,12 @@ $(document).ready(function() {
  
     $('input.column_filter').on( 'keyup click', function () {
         filterColumn( $(this).parents('tr').attr('data-column') );
+    } );
+	
+	// Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
     } );
 	
 } );
